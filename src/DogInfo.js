@@ -8,9 +8,10 @@ const DogInfo = (props) => {
 
 		return (
 			<div id="dog-info">
-				<img src="https://weloveanimals.me/wp-content/uploads/2017/10/gettyimages-590486672-e1508512743796.jpg" style={imgStyle} alt="pup pup"/>
-				<h2>Mr. Bonkers</h2>
-				<button>Good Dog</button>
+				<img src={props.dog.image} style={imgStyle} alt="pup pup"/>
+				<h2>{props.dog.name}</h2>
+				<h3>{props.dog.isGoodDog ? "Good dog!" : "Bad dog!"}</h3>
+				<button onClick={e => props.changeGoodness(props.dog)}>Good Dog</button>
 			</div>
 		)
 
